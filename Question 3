@@ -1,0 +1,54 @@
+#include <iostream>
+#include <ctime>
+#include <chrono>
+using namespace std;
+using namespace std::chrono;
+
+//Static array
+void static_array() {
+  int arr[100000];
+}
+
+//Static Stack
+void static_stack() {
+  int arr[100000];
+}
+
+//Static heap
+void static_heap() {
+  int *arr = new int[100000];
+}
+
+int main() {
+  //Get final time for array
+auto start = high_resolution_clock::now();
+for(int i = 0;i<100000; i++) {
+  static_array();
+}
+
+// Get final time for stack
+auto stop = high_resolution_clock::now();
+auto duration = duration_cast<microseconds>(stop - start);
+cout << "Time taken by first function: "
+<< duration.count() << " microseconds" << endl;
+start = high_resolution_clock::now();
+for(int i = 0;i<100000; i++) {
+  static_stack();
+}
+
+// Get final time for heap
+stop = high_resolution_clock::now();
+duration = duration_cast<microseconds>(stop - start);
+cout << "Time taken by second function: "
+<< duration.count() << " microseconds" << endl;
+start = high_resolution_clock::now();
+for(int i = 0;i<100000; i++) {
+  static_heap();
+}
+
+// Get ending timepoint
+stop = high_resolution_clock::now();
+duration = duration_cast<microseconds>(stop - start);
+cout << "Time taken by third function: "
+<< duration.count() << " microseconds" << endl;
+}
