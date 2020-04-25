@@ -1,0 +1,20 @@
+$name = "DAVIDDD";
+sub printName {
+    print "Name: $name \n";
+}
+
+sub staticEx {
+    my $name = "David";
+    printName();
+}
+
+sub dynamicEx{
+    local $name = "Martinez";
+    printName();
+}
+
+print "This is the static Example \n";
+staticEx();
+
+print "This is the Dynamic Example \n";
+dynamicEx();
