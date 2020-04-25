@@ -1,0 +1,25 @@
+#include <iostream>
+
+enum numbers{
+  one = 1, two = 2, three = 3, four = 4, five = 5,
+  six = 6, seven = 7, eight = 8, nine = 9, ten = 10,
+};
+
+enum hundreds{
+  hundred = 100, twohundred = 200, threehundred = 300,
+};
+
+int main (){
+  std::cout << (one+one) << std::endl;
+  std::cout << (one+two) << std::endl;
+  std::cout << (one+three) << std::endl;
+  std::cout << (four+one) << std::endl;
+  std::cout << (ten+one) << std::endl;
+  std::cout << (hundred+nine+nine) << std::endl;
+  std::cout << (three*three) << std::endl;
+  std::cout << (two*twohundred) << std::endl;
+  std::cout << (twohundred/two) << std::endl;
+  std::cout << (six-six) << std::endl;
+  std::cout << (seven+nine) << std::endl;
+  std::cout << (one+three-two*threehundred) << std::endl;
+}
